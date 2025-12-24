@@ -1,70 +1,59 @@
 # Kaggle Assignment 3 – Sentiment Analysis
 
-This repository contains my solution for **Kaggle Assignment 3** of the  
-**Machine Learning Practice (MLP)** course, IIT Madras.
+This repository contains a refactored solution for **Kaggle Assignment 3** of the **Machine Learning Practice (MLP)** course, IIT Madras.
 
-The objective of this assignment is to perform **multi-class sentiment analysis**
-on movie review phrases using **classical machine learning models** and
-**TF-IDF-based text features**, strictly within the MLP syllabus.
+The objective of this assignment is to perform **multi-class sentiment analysis** on movie review phrases using **classical machine learning models** and **TF-IDF-based text features**.
 
 ---
 
-## Problem Statement
-Given a movie review phrase, predict its **sentiment label (0–4)**.
+## Project Structure
+
+The project has been refactored from a single Jupyter Notebook into a modular structure:
+
+- `src/`: Contains Python modules for data preprocessing (`data_preprocessing.py`), model training (`model_training.py`), and configuration (`config.py`).
+- `scripts/`: Contains executable scripts for training (`train.py`) and prediction (`predict.py`).
+- `notebook/`: Contains the refactored Jupyter Notebook, which now serves as a high-level interface and for visualizations.
+- `data/`: (Not included in repo) This is where the Kaggle dataset files should be placed.
+- `requirements.txt`: Lists the Python dependencies for the project.
 
 ---
 
-## Approach
-The complete workflow followed in this project includes:
+## Installation
 
-- Loading and inspecting the dataset  
-- Identifying text, target, and numeric features  
-- Handling missing values and duplicates  
-- Feature engineering (text length features)  
-- Outlier detection and handling using IQR  
-- Exploratory Data Analysis with visualizations  
-- Text preprocessing using **TF-IDF**  
-- Training **7+ machine learning models**  
-- Hyperparameter tuning for **3 models**  
-- Model comparison using validation metrics  
-- Final model selection and Kaggle submission  
-
-All steps are documented clearly inside the notebook.
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git
+    cd your-repo-name
+    ```
+2.  Install the required libraries:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  Download the dataset from the [Kaggle competition page](https://www.kaggle.com/competitions/mlp-term-3-2025-kaggle-assignment-3/data) and place the `train.csv`, `test.csv`, and `sample_submission.csv` files into a `/kaggle/input/mlp-term-3-2025-kaggle-assignment-3` directory.
 
 ---
 
-## Models Used
-- Logistic Regression  
-- Linear SVC  
-- Multinomial Naive Bayes  
-- SGD Classifier  
-- Random Forest  
-- Gradient Boosting  
-- XGBoost  
-- Passive Aggressive Classifier  
-- Character n-gram TF-IDF + Logistic Regression (final model)
+## Usage
 
----
+### Training the Model
 
-> Note: Dataset files are not included in this repository and should be
-downloaded directly from the Kaggle competition page.
+To train the sentiment analysis model, run the `train.py` script:
 
----
+```bash
+python scripts/train.py
+```
 
-## Running the Notebook
+This will preprocess the training data, train the final model (Character n-gram TF-IDF + Logistic Regression), and save the trained model to `model.joblib`.
 
-### Option 1: Google Colab
-Open the notebook directly in Colab:
+### Generating Predictions
 
+To generate predictions on the test set, run the `predict.py` script:
 
-### Option 2: Kaggle
-Upload the notebook to Kaggle and use the competition-provided datasets.
+```bash
+python scripts/predict.py
+```
 
----
-
-## Final Output
-The notebook generates a `submission.csv` file in the required Kaggle format,
-which can be uploaded to the competition to obtain the leaderboard score.
+This will load the trained model, make predictions on the test data, and create a `submission.csv` file in the required Kaggle format.
 
 ---
 
@@ -72,6 +61,3 @@ which can be uploaded to the competition to obtain the leaderboard score.
 **Kashyap Rahul**  
 IIT Madras – BS Degree Programme  
 Machine Learning Practice
-
-
-
