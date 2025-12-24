@@ -1,7 +1,15 @@
 import pandas as pd
 from src.data_preprocessing import load_data, preprocess_data
 from src.model_training import train_model, save_model
-from src.config import TRAIN_DATA_PATH, TEST_DATA_PATH, SAMPLE_SUBMISSION_PATH, TEXT_COL, TARGET_COL, MODEL_PATH
+from src.config import (
+    TRAIN_DATA_PATH,
+    TEST_DATA_PATH,
+    SAMPLE_SUBMISSION_PATH,
+    TEXT_COL,
+    TARGET_COL,
+    MODEL_PATH,
+)
+
 
 def main():
     # Load data
@@ -16,6 +24,7 @@ def main():
     # Save model
     save_model(model, MODEL_PATH)
     print(f"Model saved to {MODEL_PATH}")
+
 
 if __name__ == "__main__":
     main()
