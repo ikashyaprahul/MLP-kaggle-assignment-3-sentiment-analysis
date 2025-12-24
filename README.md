@@ -46,5 +46,32 @@ All steps are documented clearly inside the notebook.
 
 ---
 
+> Note: Dataset files are not included in this repository and should be
+downloaded directly from the Kaggle competition page.
+
+---
+
+## Running the Notebook
+
+### Option 1: Google Colab
+Open the notebook directly in Colab:
+
+
+### Option 2: Kaggle
+Upload the notebook to Kaggle and use the competition-provided datasets.
+
+---
+
+## Final Output
+The notebook generates a `submission.csv` file in the required Kaggle format,
+which can be uploaded to the competition to obtain the leaderboard score.
+
+---
+
+## Author
+**Kashyap Rahul**  
+IIT Madras – BS Degree Programme  
+Machine Learning Practice
+
 
 
